@@ -131,13 +131,13 @@ public class StudentController {
 
     @GetMapping("/sort/name")
     public ResponseEntity<List<Student>> sortByName() {
-        return  ResponseEntity.ok(studentService.sortByName());
+        return ResponseEntity.ok(studentService.sortByName());
 
     }
 
     @GetMapping("/sort/age")
     public ResponseEntity<List<Student>> sortByAge() {
-        return  ResponseEntity.ok(studentService.sortByAge());
+        return ResponseEntity.ok(studentService.sortByAge());
 
     }
 
@@ -148,14 +148,14 @@ public class StudentController {
     }
 
     @GetMapping("/pagination")
-    public ResponseEntity<Page<Student>> getStudentsWithPagination(@RequestParam(defaultValue = "0")int page,@RequestParam(defaultValue = "5")int size){
-        return ResponseEntity.ok(studentService.getStudentsWithPagination(page,size));
+    public ResponseEntity<Page<Student>> getStudentsWithPagination(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "5") int size) {
+
+        return ResponseEntity.ok(
+                studentService.getStudentsWithPagination(page, size)
+        );
     }
-
-
-
-
-
 
 
 }

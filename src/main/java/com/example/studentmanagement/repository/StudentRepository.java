@@ -2,6 +2,8 @@ package com.example.studentmanagement.repository;
 
 import com.example.studentmanagement.model.Student;
 //import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
@@ -24,5 +26,8 @@ public interface StudentRepository extends MongoRepository<Student, String> {
 
     // Filter by status (ACTIVE / INACTIVE)
     List<Student> findByStatus(String status);
+
+    // Pagination
+    Page<Student> findAll(Pageable pageable);
 
 }
