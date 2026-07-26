@@ -29,4 +29,8 @@ public class DashboardResponse {
     // Recently added students
     private List<Student> recentStudents;
 
+    private long maleStudents;
+    
+    private long femaleStudents;
+
 }

@@ -40,6 +40,14 @@ public class DashboardService {
                         "INACTIVE".equalsIgnoreCase(student.getStatus()))
                 .count();
 
+        long maleStudents = students.stream()
+                .filter(s -> "Male".equalsIgnoreCase(s.getGender()))
+                .count();
+
+        long femaleStudents = students.stream()
+                .filter(s -> "Female".equalsIgnoreCase(s.getGender()))
+                .count();
+
 
         // Course wise statistics
         Map<String, Long> courseStatistics = students.stream()
@@ -63,7 +71,9 @@ public class DashboardService {
                 activeStudents,
                 inactiveStudents,
                 courseStatistics,
-                recentStudents
+                recentStudents,
+                maleStudents,
+                femaleStudents
         );
     }
 }
