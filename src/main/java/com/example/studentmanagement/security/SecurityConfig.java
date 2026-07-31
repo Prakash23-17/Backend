@@ -58,7 +58,7 @@ public class SecurityConfig {
 
         CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedOrigins(List.of("http://localhost:5173", "frontend-ten-jet-gj3ln7jydj.vercel.app"));
+        configuration.setAllowedOrigins(List.of("http://localhost:5173", "https://frontend-ten-jet-gj3ln7jydj.vercel.app"));
         configuration.setAllowedMethods(List.of(
                 "GET",
                 "POST",
